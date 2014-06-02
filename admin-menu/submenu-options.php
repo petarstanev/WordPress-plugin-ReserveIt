@@ -189,8 +189,8 @@ function reserveit_all_tables() {
             $i++;
             echo "<input type='hidden' value='$restaurant_id' name='restaurant_id_hidden" . $restaurant_id . "'>";
             echo "<td> $restaurant_address</td>";
-            echo "<td><input type='number' value='$user_table_id' name='user_table_id" . $id . "'></td>";
-            echo "<td><input type='number' value='$chairs' name='chairs" . $id . "'></td>";
+            echo "<td><input type='number' min='0' value='$user_table_id'  name='user_table_id" . $id . "'></td>";
+            echo "<td><input type='number' min='1' value='$chairs' name='chairs" . $id . "'></td>";
             echo "<td><input type='checkbox' name='remove" . $id . "'></td>";
             echo "</tr>";
         }
@@ -230,8 +230,8 @@ function reserveit_all_tables() {
             }
         }
         echo "</select>";
-        echo "Table ID - <input type='number' id='tableid' name='add_table_user_table_id'/>";
-        echo "Chairs - <input type='number' id='tablechairs' name='add_table_chairs'/>";
+        echo "Table ID - <input type='number' min='0' id='tableid' name='add_table_user_table_id'/>";
+        echo "Chairs - <input type='number' min='1' id='tablechairs' name='add_table_chairs'/>";
         echo "<input type='submit' value='Add'  name='add_table' onClick='window.location.reload(true)' ></p>";
         echo "</form>";
     }

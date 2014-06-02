@@ -89,6 +89,7 @@ function reserveit_expand_reservations() {
                 FROM {$wpdb->prefix}reserveit_reservations
                 WHERE {$wpdb->prefix}reserveit_reservations.restaurant_id= $restaurant_id
                 AND DATE({$wpdb->prefix}reserveit_reservations.start_datetime) = '$sql_date'
+				AND confirmed = 1
                 ORDER BY {$wpdb->prefix}reserveit_reservations.start_datetime"
         );
                 

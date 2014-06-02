@@ -329,7 +329,7 @@ function reserveit_user_form() {
 
                             $slug = wp_generate_password(12, FALSE, FALSE);
 
-                            $now_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                            $now_link = "$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
                             $pos = strpos($now_link, "?");
 
@@ -365,7 +365,7 @@ function reserveit_user_form() {
                                 echo '<br>';
                                 $to = $_POST ['email_name'];
                                 $subject = "Confirm your reservation No reply";
-                                $message = "Please confirm your reservation by going to this link" . $full_link;
+                                $message = "Please confirm your reservation by going to this link : " . $full_link;
 
                                 wp_mail($to, $subject, $message);
                             } else {

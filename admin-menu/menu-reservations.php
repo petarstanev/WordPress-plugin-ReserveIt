@@ -222,7 +222,6 @@ function reserveit_all_reservations_now($datetime, $restaurant_id) {
         $input_date = date('d-m-Y');
     }
     $all_working_hours = reserveit_get_working_hours($restaurant_id);
-    date_default_timezone_set('Europe/Sofia');
     $minutes_now = (date('i') > 30) ? '30' : '00';
     $hours_now = date('H');
     $time_now = $hours_now . ":" . $minutes_now;

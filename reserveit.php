@@ -160,11 +160,11 @@ function reserveit_user_form() {
                 ?>
 
                 <form method="post">
-                    <p>Time :<input type="text" id="timepicker" value="<?php if(!empty ($_POST ['date_name'])){echo $_POST ['time_name'];}?>" name="time_name"/></p>        
-                    <p>Date :<input type="text" id="reserveit_user_datepicker" value="<?php if(!empty($_POST ['date_name'])){echo $_POST ['date_name'];}?>" name="date_name"/></p>
-                    <p>Persons :<input type="number" id="persons" min="1" max="30" value="<?php if(!empty($_POST ['persons_name'])){echo $_POST ['persons_name'];}?>" name="persons_name"/></p>
+                    <p>Time :<input type="text" id="timepicker" name="time_name"/></p>        
+                    <p>Date :<input type="text" id="reserveit_user_datepicker" name="date_name"/></p>
+                    <p>Persons :<input type="number" id="persons" min="1" max="30" name="persons_name"/></p>
                     <p>Restaurant :
-                        <select name="select1" value="<?php if(!empty($_POST ['select1'])){echo $_POST ['select1'];}?>">   
+                        <select name="select1">   
                             <?php
                             if (!empty($_POST['reserveit_admin_restaurant_select'])) {
                                 $restaurant_id = $_POST ['reserveit_admin_restaurant_select'];
@@ -187,9 +187,9 @@ function reserveit_user_form() {
                             }
                             ?>
                         </select></p>
-                    <p>First name :<input type="text" id="firstname" value="<?php if(!empty($_POST ['firstname_name'])){echo $_POST ['firstname_name'];}?>" name="firstname_name"/></p>
-                    <p>Surname :<input type="text" id="surname" value="<?php if(!empty($_POST ['surname_name'])){echo $_POST ['surname_name'];};?>" name="surname_name"/></p>
-                    <p>Email :<input type="email" id="email" value="<?php if(!empty($_POST ['email_name'])){echo $_POST ['email_name'];}?>" name="email_name"/></p>
+                    <p>First name :<input type="text" id="firstname" name="firstname_name"/></p>
+                    <p>Surname :<input type="text" id="surname" name="surname_name"/></p>
+                    <p>Email :<input type="email" id="email" name="email_name"/></p>
 
                     <input type="submit" id="make_reservation" class = "button-primary" value="Make reservations" name="make_reservation">
                 </form>
@@ -329,7 +329,7 @@ function reserveit_user_form() {
 
                             $slug = wp_generate_password(12, FALSE, FALSE);
 
-                            $now_link = "$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                            $now_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
                             $pos = strpos($now_link, "?");
 
@@ -365,7 +365,7 @@ function reserveit_user_form() {
                                 echo '<br>';
                                 $to = $_POST ['email_name'];
                                 $subject = "Confirm your reservation No reply";
-                                $message = "Please confirm your reservation by going to this link : " . $full_link;
+                                $message = "Please confirm your reservation by going to this link" . $full_link;
 
                                 wp_mail($to, $subject, $message);
                             } else {

@@ -4,12 +4,12 @@
  * Plugin Name: Reserve it
  * Description: Plugin for making reservations in restaurants. Use shortcode "[reserveit]" when you make new page.
  * Author: Petar Stanev
- * Author URI: petarstanevtues@gmail.com
+ * Author URI: petarstanev@outlook.com
  * Version: 0.1
  * License: GPLv2 ot later
  */
 /*
-  Petar Stanev (email : petarstanevtues@gmail.com)
+  Petar Stanev (email : petarstanev@outlook.com)
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License, version 2, as
